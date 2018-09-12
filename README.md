@@ -97,8 +97,9 @@ Expected Response:
 URL: https://localhost:3000/api/{todo_id:string}
 
 Expected Response:
+```
 Success/Fail
-
+```
 ### GET (all items by user's id)
 
 URL: https://localhost:3000/api/all{user's_id:number}
