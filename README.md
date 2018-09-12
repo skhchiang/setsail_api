@@ -48,43 +48,50 @@ node index.js
 
 6. Make API calls with Postman. Enter the URL into the URL bar, enter body content into the body section (where necessary).
 
-###GET
+### GET
 
 URL: https://localhost:3000/api/{todo_id:string} 
 
-Expected Response: 
+Expected Response:
+```
 {   "todo_created": {string},
     "todo_deadline": {string},
     "todo_name": {string},
     "user_id": {number}    }
+```
     
-###POST
+### POST
 
 URL: http://localhost:3000/api/
 
 Body Content:
+```
 {	"userId": {number},
 	"tdName": {string},
 	"tdDl": {string}  }
+```
 
 Expected Response:
+```
 {  "name": {string} }
-
+```
 ###PATCH (Update)
 
 URL: https://localhost:3000/api/{todo_id:string}
 
 Body Content:
+```
 {	"userId": {number},
 	"tdName": {string},
 	"tdDl": {string}  }
-  
-Expected Response: 
+```  
+Expected Response:
+```
 {   "todo_created": {string},
     "todo_deadline": {string},
     "todo_name": {string},
     "user_id": {number}    }
-    
+```    
 ### DELETE
 
 URL: https://localhost:3000/api/{todo_id:string}
@@ -97,6 +104,7 @@ Success/Fail
 URL: https://localhost:3000/api/all{user's_id:number}
 
 Expected Response:
+```
 [  {   "todo_created": {string},
        "todo_deadline": {string},
        "todo_name": {string},
@@ -105,5 +113,20 @@ Expected Response:
        "todo_deadline": {string},
        "todo_name": {string},
        "user_id": {number}    }   ]
+```
+
+### Tests
+
+To run tests, first download and install [Jasmine](https://jasmine.github.io/)
+```
+npm jasmine
+```
+Then from the root folder, enter the command
+```
+jasmine
+```
+to run all tests
+
+
 
 
