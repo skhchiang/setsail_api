@@ -1,0 +1,147 @@
+{
+	"info": {
+		"_postman_id": "f351e374-8119-4268-9635-5926f7d13fca",
+		"name": "Set Sail Interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST todo_item",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userId\": 0,\n\t\"tdName\": \"wedding\",\n\t\"tdDl\": \"13-9-2019\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH todo_item",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tdDl\": \"19-4-2047\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/-LM1k1ayh3ok1savoQGF",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"-LM1k1ayh3ok1savoQGF"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE todo item",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tdDl\": \"19-4-2047\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/-LM1dH3UQTcd8_7fN_8t",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"-LM1dH3UQTcd8_7fN_8t"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET ALL todo_item by user_id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"tdDl\": \"19-4-2047\"\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/all/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"all",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET todo_item",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:3000/api/-LM1e8zcKqiFw1LcO4LJ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"-LM1e8zcKqiFw1LcO4LJ"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

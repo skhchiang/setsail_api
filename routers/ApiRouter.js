@@ -15,11 +15,11 @@ class ApiRouter {
     constructor() {
         this.butlerService = butlerService;
     }
-    getRouter() {
+    router() {
         const router = express.Router();
         const butlerRouter = new ButlerRouter(this.butlerService);
 
-        router.use("/", butlerRouter.getRouter());
+        router.use("/", butlerRouter.router());
         return router
     }
 }

@@ -9,11 +9,11 @@ const butlerService = require('../services/ButlerService');
 
 class ButlerRouter {
 
-    constructor (butlerService) {
+    constructor(butlerService) {
         this.butlerService = butlerService;
     }
 
-    getRouter() {
+    router() {
         let router = express.Router();
         router.post("/", this.add.bind(this));
         router.get("/:id", this.read.bind(this));
@@ -25,13 +25,15 @@ class ButlerRouter {
 
     add(req, res) {
         //created time will be stored as well
-        console.log("addTd Router accessed")
         return this.butlerService
             .addTd(req.body)
-            .then((data) => {res.json(data.data)})
-            .catch(err => { console.log("post err", err); 
-            res.status(500).json(err)
-        })
+            .then((data) => {
+                res.json(data.data)
+            })
+            .catch(err => {
+                console.log("post err", err);
+                res.status(500).json(err)
+            })
     }
 
     read(req, res) {
@@ -42,8 +44,12 @@ class ButlerRouter {
 
     change(req, res) {
         return this.butlerService.updateTd(req.params.id, req.body)
-            .then(() => {return this.butlerService.getTd(req.params.id)})
-            .then((data) => { console.log("updateTd Accessed", data.data); res.json(data.data)})
+            .then(() => {
+                return this.butlerService.getTd(req.params.id)
+            })
+            .then((data) => {
+                res.json(data.data)
+            })
             .catch((err) => res.status(500).json(err))
     }
 
@@ -54,7 +60,7 @@ class ButlerRouter {
             .catch((err) => res.status(500).json("Delete Failed", err))
     }
 
-    readAll(req,res) {
+    readAll(req, res) {
         return this.butlerService.getAll(req.params.userid)
 
             .then((data) => res.json(Object.values(data.data).filter(input => input.user_id == req.params.userid)))

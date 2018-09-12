@@ -8,8 +8,8 @@ const axios = require("axios")
 class ButlerService {
     constructor() {}
 
-     addTd (body) {
-        console.log("tdId: ", body.userId, " tdDl: ", body.tdDl, " tdName: ", body.tdName);
+    addTd(body) {
+        // console.log("tdId: ", body.userId, " tdDl: ", body.tdDl, " tdName: ", body.tdName);
 
         return axios.post("https://setsail-15ab8.firebaseio.com/todolist.json", {
             user_id: body.userId,
@@ -20,7 +20,7 @@ class ButlerService {
     }
 
     getTd(id) {
-        console.log("id input: ", id)
+
         return axios.get(`https://setsail-15ab8.firebaseio.com/todolist/${id}.json`)
 
     }
@@ -36,7 +36,7 @@ class ButlerService {
     }
 
     getAll(userid) {
-        console.log("userid input: ", userid)
+
         return axios.get(`https://setsail-15ab8.firebaseio.com/todolist.json`)
 
     }
